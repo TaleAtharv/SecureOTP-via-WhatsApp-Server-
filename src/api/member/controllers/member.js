@@ -4,7 +4,7 @@
 /**
  * member controller
  */
-
+require("dotenv").config();
 const { createCoreController } = require('@strapi/strapi').factories;
 const axios = require('axios');
 module.exports = createCoreController('api::member.member', ({ strapi }) => ({
@@ -57,7 +57,7 @@ module.exports = createCoreController('api::member.member', ({ strapi }) => ({
                 message: "your OTP is verified,Thank you" 
             }, {
                 headers: {
-                    token: 8857977
+                    token: process.env.TOKEN
                 }
             })
         } else {
